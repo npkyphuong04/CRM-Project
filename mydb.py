@@ -1,5 +1,6 @@
-#pip install pymysql
-#pip install mysqlclient
+# pip install pymysql
+# pip install mysqlclient
+# Run command: "python mydb.py" in terminal to test the connection
 
 import pymysql
 
