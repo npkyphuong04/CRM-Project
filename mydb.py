@@ -1,5 +1,5 @@
-#pip install mysql
 #pip install pymysql
+#pip install mysqlclient
 
 import pymysql
 
