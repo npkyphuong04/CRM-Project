@@ -32,6 +32,7 @@ CREATE TABLE Items (
   FOREIGN KEY (EventID) REFERENCES Events(EventID)
 );
 
+-- Read README file before running this script
 -- Script to populate the Sessions table
 INSERT INTO Sessions (SessionID, MobileBrandName, Source, AppVersion)
 SELECT DISTINCT SessionID, MobileBrandName, Source, AppVersion
