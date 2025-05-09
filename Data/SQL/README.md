@@ -17,3 +17,15 @@ Data Import using MySQL Workbench Wizard:
 6. Click "Next" to start the import.
 7. Click "Finish" when done.
 8. Verify the data in the clean_data table.
+
+Table description:
+1. Core Tables
+•	Users: Stores system user information (web user). 
+•	Customers: Stores information about customers.
+2. Sales Management Tables
+•	Leads: Store information about potential customers. 
+•	Opportunities: Stores infor of sales opportunities. 
+•	Sales_Stages: Stores the stages of the sales process.
+3.  Marketing Tables
+•	Campaigns: Stores infor of marketing campaigns. 
+•	Leads_Campaigns: Connects potential customers with marketing campaigns. 
