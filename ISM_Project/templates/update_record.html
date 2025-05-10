@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/sidebar.css' %}">
+<link rel="stylesheet" href="{% static 'css/update_record.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="main-content-wrapper">
+    <!-- Include your sidebar -->
+    {% include 'sidebar.html' %}
+    
+    <!-- Main content area -->
+    <main class="main-content">
+        <div class="form-container">
+            <div class="card shadow-sm">
+                <div class="card-body p-4">
+                    <h3 class="mb-4">Update Customer</h3>
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" name="name" value="{{ customer.name }}" placeholder="Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" value="{{ customer.email }}" placeholder="name@example.com" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone</label>
+                            <input type="text" class="form-control" id="phone" name="phone" value="{{ customer.phone }}" placeholder="(111) 222-3333" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="address" class="form-label">Address</label>
+                            <input type="text" class="form-control" id="address" name="address" value="{{ customer.address }}" placeholder="Da Nang City" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="tier" class="form-label">Tier</label>
+                            <input type="text" class="form-control" id="tier" name="tier" value="{{ customer.tier }}" placeholder="Gold" required>
+                        </div>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <button type="submit" class="btn btn-success px-4">UPDATE</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+{% endblock %}
