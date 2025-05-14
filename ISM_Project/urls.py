@@ -16,10 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.shortcuts import render
 
 urlpatterns = [
-    path('', lambda request: render(request, 'update_record.html')),
-    #path('admin/', admin.site.urls),
-    #path('', include('CRM_Application.urls')),
+    path('admin/', admin.site.urls),
+    path('', include('CRM_Application.urls')),
 ]

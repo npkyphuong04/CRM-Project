@@ -1,45 +1,57 @@
 {% extends 'base.html' %}
+
 {% block content %}
+{% include 'loggedin_navbar.html' %}
 
-
-
-    <div class="card">
-        <div class="card-header"><strong>
-            {{ customer_record.first_name }}
-            {{ customer_record.last_name }}</strong>
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+    <div class="card shadow-lg w-100" style="max-width: 600px;">
+        <div class="card-header text-black text-center fw-bold fs-4" style="background-color: #F3DEA5;">
+            {{ customer_record.first_name }} {{ customer_record.last_name }}
         </div>
         <div class="card-body">
+            <table class="table table-bordered w-100">
+                <tbody>
+                    <tr>
+                        <th style="width: 30%;">ID</th>
+                        <td>{{ customer_record.id }}</td>
+                    </tr>
+                    <tr>
+                        <th>Email</th>
+                        <td>{{ customer_record.email }}</td>
+                    </tr>
+                    <tr>
+                        <th>Phone</th>
+                        <td>{{ customer_record.phone }}</td>
+                    </tr>
+                    <tr>
+                        <th>Address</th>
+                        <td>{{ customer_record.address }}</td>
+                    </tr>
+                    <tr>
+                        <th>City</th>
+                        <td>{{ customer_record.city }}</td>
+                    </tr>
+                    <tr>
+                        <th>Created At</th>
+                        <td>{{ customer_record.created_at }}</td>
+                    </tr>
+                </tbody>
+            </table>
 
 
-            <p class="card-text">
-                <strong>Email: </strong>{{ customer_record.email }}</p>
-
-            <p class="card-text">
-                <strong>Phone: </strong>{{ customer_record.phone }}
-            </p>
-
-            <p class="card-text">
-                <strong>Address: </strong>{{ customer_record.address }}</p>
-
-            <p class="card-text">
-                <strong>City: </strong>{{ customer_record.city }}</p>
-
-            <p class="card-text">
-                <strong>Create At: </strong>{{ customer_record.created_at }}</p>
-
-            <p class="card-text">
-                <strong>ID: </strong>{{ customer_record.id }}</p>
-
-
+            <div class="d-flex justify-content-between mt-4">
+                <a href="{% url 'home' %}" class="btn btn-secondary">
+                    <i class='bx bx-arrow-back'></i> BACK
+                </a>
+                <a href="{% url 'update_record' customer_record.id %}" class="btn btn-success">
+                    <i class='bx bx-edit-alt'></i> UPDATE
+                </a>
+                <a href="{% url 'delete_record' customer_record.id %}" class="btn btn-danger">
+                    <i class='bx bx-trash'></i> DELETE
+                </a>
+            </div>
         </div>
     </div>
-
-    <br/><br/>
-    <a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
-
-    <a href="{% url 'delete_record' customer_record.id %}" class="btn btn-danger">Delete</a>
-
-    <a href="{% url 'update_record' customer_record.id %}" class="btn btn-secondary">Update Record</a>
-
+</div>
 
 {% endblock %}
