@@ -15,51 +15,16 @@ CREATE TABLE Users (
     updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
-CREATE TABLE Customer (
-    customer_id INT PRIMARY KEY,
+CREATE TABLE Contacts (
+    contact_id INT PRIMARY KEY,
     name VARCHAR(100),
     email VARCHAR(255) UNIQUE NOT NULL,
     phone_number VARCHAR(20),
-	city VARCHAR(100),
-    region VARCHAR(100)
-);
-
--- Sales stages (Pipeline)
-CREATE TABLE Sales_Stages (
-    stage_id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(50),
-    description TEXT,
-    stage_order INT
-);
-
--- Leads (Potential customers)
-CREATE TABLE Leads (
-    lead_id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(50),
-    email VARCHAR(100),
-    phone_number VARCHAR(20),
-    source VARCHAR(100),  -- e.g., Web, Referral, Ads
-    status VARCHAR(50),   -- e.g., New, Contacted, Qualified
-    owner_user_id INT,    -- Sales rep handling the lead
-    created_at DATETIME,
-    updated_at DATETIME,
-    FOREIGN KEY (owner_user_id) REFERENCES Users(user_id) ON DELETE SET NULL
-);
-
--- Opportunities (Sales chances)
-CREATE TABLE Opportunities (
-    opportunity_id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(100),
-    customer_id INT,
-    stage_id INT,
-    amount DECIMAL(10,2),
-    expected_close_date DATE,
-    probability DECIMAL(5,2), -- e.g., 0.7 = 70%
+    city VARCHAR(100),
+    region VARCHAR(100),
+    status VARCHAR(50),          -- 'Lead', 'Customer'
     owner_user_id INT,
-    created_at DATETIME,
-    updated_at DATETIME,
-    FOREIGN KEY (customer_id) REFERENCES Customer(customer_id),
-    FOREIGN KEY (stage_id) REFERENCES Sales_Stages(stage_id)
+    FOREIGN KEY (owner_user_id) REFERENCES Users(user_id)
 );
 
 -- Marketing campaigns
@@ -76,19 +41,19 @@ CREATE TABLE Campaigns (
 );
 
 -- Mapping leads ↔ campaigns
-CREATE TABLE Leads_Campaigns (
-    lead_id INT,
+CREATE TABLE Contact_Campaigns (
+	contact_id INT,
     campaign_id INT,
     created_at DATETIME,
     updated_at DATETIME,
-    PRIMARY KEY (lead_id, campaign_id),
-    FOREIGN KEY (lead_id) REFERENCES Leads(lead_id),
+    PRIMARY KEY (contact_id, campaign_id),
+    FOREIGN KEY (contact_id) REFERENCES Contacts(contact_id),
     FOREIGN KEY (campaign_id) REFERENCES Campaigns(campaign_id)
 );
 
 CREATE TABLE sessions (
     session_id BIGINT PRIMARY KEY,
-    customer_id INT,
+	contact_id INT,
     session_start DATETIME,
     session_end DATETIME,
     app_version VARCHAR(50),
@@ -96,7 +61,7 @@ CREATE TABLE sessions (
 	traffic_source VARCHAR(100),    -- direct, social, ads, email, etc.
     city VARCHAR(100),
     region VARCHAR(50),
-    FOREIGN KEY (customer_id) REFERENCES Customer(customer_id)
+    FOREIGN KEY (contact_id) REFERENCES Contacts(contact_id)
 );
 
 CREATE TABLE items (
@@ -142,26 +107,40 @@ INSERT INTO events (session_id, event_time, event_name, item_id)
 SELECT SessionID, EventDateTime, EventName, ItemID
 FROM clean_data;
 
--- Simulate Customer data from Session
-INSERT INTO Customer (customer_id, name, email, phone_number, city, region)
+-- Simulate contact data from Session
+INSERT INTO Contacts (contact_id, name, email, phone_number, city, region, status)
 SELECT
     session_group_id AS customer_id,
     CONCAT('User_', session_group_id) AS name,
     CONCAT('user_', session_group_id, '@fakeemail.com') AS email,
-    CONCAT('09', LPAD(session_group_id, 8, '0')) AS phone_number,
+    CONCAT('09', LPAD(MIN(phone_component), 8, '0')) AS phone_number,
     MIN(city) AS city,
-    MIN(region) AS region
+    MIN(region) AS region,
+    CASE 
+        WHEN SUM(CASE WHEN event_name = 'purchase' THEN 1 ELSE 0 END) > 0 THEN 'Customer'
+        ELSE 'Lead'
+    END AS status
 FROM (
     SELECT
-        session_id,
-        city,
-        region,
-        session_id % 1000 AS session_group_id
-    FROM Sessions
-) AS grouped_sessions
+        s.session_id,
+        s.city,
+        s.region,
+        s.session_id % 100 AS session_group_id,
+        s.session_id % 1000000000 AS phone_component, 
+        e.event_name
+    FROM Sessions s
+    JOIN Events e ON s.session_id = e.session_id
+) AS session_events
 GROUP BY session_group_id;
+
+-- update contact_id in session table
+SET SQL_SAFE_UPDATES = 0;
+UPDATE Sessions s
+JOIN Contacts c ON s.session_id % 100 = c.contact_id
+SET s.contact_id = c.contact_id;
+SET SQL_SAFE_UPDATES = 1;
 
 select * from sessions;
 select * from items;
 select * from events;
-select * from customer;
+select * from contacts;
