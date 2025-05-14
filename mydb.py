@@ -13,5 +13,7 @@ dataBase = pymysql.connect(
 
 cursor = dataBase.cursor()
 
+# Create a database
+cursor.execute("CREATE DATABASE IF NOT EXISTS ISM_DB")
 
 print("Database Connected Successfully!")
