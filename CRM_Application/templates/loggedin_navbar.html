@@ -32,18 +32,11 @@
                 <li class="nav-item">
                     <a class="nav-link text-black custom-hover" href="#"><i class='bx bx-grid-alt'></i> Dashboard</a>
                 </li>
-                {% else %}
-                <li class="nav-item">
-                    <a class="nav-link text-black custom-hover" href="{% url 'register' %}">Register</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-black custom-hover" href="{% url 'home' %}">Login</a>
-                </li>
                 {% endif %}
             </ul>
 
             {% if user.is_authenticated %}
-            <div class="d-flex align-items-center ms-auto">
+            <div class="d-flex align-items-center justify-content-center ms-auto">
                 <div class="me-3 text-end text-black fs-5">
                     <div><strong>{{ request.user.first_name }} {{ request.user.last_name }}</strong></div>
                 </div>
