@@ -32,6 +32,13 @@
                 <li class="nav-item">
                     <a class="nav-link text-black custom-hover" href="#"><i class='bx bx-grid-alt'></i> Dashboard</a>
                 </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link text-black custom-hover" href="{% url 'register' %}">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-black custom-hover" href="{% url 'home' %}">Login</a>
+                </li>
                 {% endif %}
             </ul>
 
