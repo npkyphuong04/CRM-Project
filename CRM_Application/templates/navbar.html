@@ -1,32 +1,33 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="{% url 'home' %}">Django CRM</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+{% load static %}
 
-        {% if user.is_authenticated %}
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'add_record' %}">Add Record</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'logout' %}">Logout</a>
-        </li>
+<!-- Sidebar -->
+<aside id="sidebar" class="sidebar">
+    <div class="h-100">
+        <!-- Logo -->
+        <div class="sidebar-logo">
+            <div class="vertical-line"></div>
+            <span class="logo-text">PizzaCRM</span>
+        </div>
 
-        {% else %}
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'register' %}">Register</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'home' %}">Login</a>
-        </li>
-        {% endif %}
+        <!-- User Info -->
+        <div class="user-info">
+            <strong>Admin 1</strong>
+            <small>Admin</small>
+        </div>
 
+        <!-- Sidebar Navigation -->
+        <ul class="nav-links">
+            <li><a href="#"><i class='bx bx-home'></i> <span>Home</span></a></li>
+            <li><a href="#"><i class='bx bx-purchase-tag'></i> <span>Promotion</span></a></li>
+            <li><a href="#" class="active"><i class='bx bx-user'></i> <span>Customers</span></a></li>
+            <li><a href="#"><i class='bx bx-wallet'></i> <span>Payment</span></a></li>
+            <li><a href="#"><i class='bx bx-grid-alt'></i> <span>Dashboard</span></a></li>
+            <li><a href="#"><i class='bx bx-cog'></i> <span>Settings</span></a></li>
+        </ul>
 
-      </ul>
-
+        <!-- Logout -->
+        <div class="logout-section">
+            <a href="{% url 'home' %}" class="logout-link"><i class='bx bx-log-out'></i> <span>Logout</span></a>
+        </div>
     </div>
-  </div>
-</nav>
+</aside>

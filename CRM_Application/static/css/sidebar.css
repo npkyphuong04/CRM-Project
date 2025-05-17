@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+
+#sidebar {
+    width: 218px;
+    min-height: 100vh;
+    background-color: #F3DEA5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.5rem 0;
+    transition: all 0.3s ease;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    transform: translateX(0);
+}
+
+.sidebar-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    padding-left: 20px;
+}
+
+.sidebar-logo span {
+    color: #D9534F;
+    font-weight: bold;
+    margin-left: 5px;
+    transition: all 0.3s ease;
+}
+
+.vertical-line {
+    width: 4px;
+    height: 20px;
+    background-color: #207C50;
+}
+
+.user-info {
+    text-align: center;
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+}
+
+.user-info strong {
+    display: block;
+    font-size: 1rem;
+}
+
+.user-info small {
+    color: #666;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-links li {
+    margin: 0.5rem 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-links a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    width: 80%;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background-color: #207C50;
+    color: white;
+}
+
+.nav-links a.active i,
+.nav-links a:hover i {
+    color: white;
+}
+
+.nav-links i {
+    font-size: 1.2rem;
+    width: 24px;
+}
+
+.nav-links span {
+    transition: all 0.3s ease;
+}
+
+.logout-section {
+    margin-top: auto;
+    text-align: center;
+    padding-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.logout-section a.logout-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    width: 80%;
+    background-color: #207C50;
+    color: white;
+}
+
+.logout-section a.logout-link i {
+    color: white;
+}
+
+.logout-section i {
+    font-size: 1.2rem;
+    width: 24px;
+}
+
+.logout-section span {
+    transition: all 0.3s ease;
+}
+
+.main {
+    flex: 1;
+    margin-left: 218px;
+    background-color: #fff;
+}
+
+@media (max-width: 768px) {
+    #sidebar {
+        width: 60px;
+    }
+
+    .sidebar-logo span,
+    .nav-links span,
+    .user-info,
+    .vertical-line,
+    .logout-section span {
+        display: none;
+    }
+
+    .nav-links a,
+    .logout-section a {
+        justify-content: center;
+    }
+    
+    .main {
+        margin-left: 60px;
+    }
+}
