@@ -1,0 +1,58 @@
+<style>
+    .custom-hover:hover,
+    .custom-hover.active {
+        color: #207C50 !important;
+        font-weight: bold;
+        font-size: large;
+    }
+
+    body {
+        font-family: 'Outfit', sans-serif;
+    }
+</style>
+
+<nav class="navbar navbar-expand-lg sticky-top" style="background-color: #F3DEA5;">
+    <div class="container-fluid">
+        <a class="navbar-brand fw-bold fs-3" href="{% url 'home' %}" style="color: #DA594A; ">🍕PizzaCRM</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link text-black custom-hover" href="#"><i class='bx bx-purchase-tag'></i>
+                        Promotion</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-black custom-hover" href="{% url 'home' %}"><i class='bx bx-user'></i>
+                        Customers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-black custom-hover" href="#"><i class='bx bx-grid-alt'></i> Dashboard</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link text-black custom-hover" href="{% url 'register' %}">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-black custom-hover" href="{% url 'home' %}">Login</a>
+                </li>
+                {% endif %}
+            </ul>
+
+            {% if user.is_authenticated %}
+            <div class="d-flex align-items-center justify-content-center ms-auto">
+                <div class="me-3 text-end text-black fs-5">
+                    <div><strong>{{ request.user.first_name }} {{ request.user.last_name }}</strong></div>
+                </div>
+                <a href="{% url 'logout' %}" class="nav-link text-black custom-hover">
+                    <i class='bx bx-log-out'></i>Logout
+                </a>
+            </div>
+            {% endif %}
+
+        </div>
+    </div>
+</nav>
