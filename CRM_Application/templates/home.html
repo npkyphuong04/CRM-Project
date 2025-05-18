@@ -65,27 +65,38 @@
             </tbody>
         </table>
         {% else %}
-        <div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
-            <div class="card shadow-lg w-100" style="max-width: 600px;">
-                <div class="card-header text-center fw-bold fs-4" style="color: #DA594A;">
-                    <h1 class="mb-0">LOGIN</h1>
-                </div>
-                <div class="card-body">
-                    <form method="POST" action="{% url 'home' %}">
-                        {% csrf_token %}
+        <div
+            style="background-color: #FFFFE8; min-height: 100vh; display: flex; align-items: center; justify-content: center;">
+            <div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+                <div class="card shadow-lg w-100" style="max-width: 600px;">
+                    <div class="card-header text-center fw-bold fs-4" style="color: #DA594A;">
+                        <h1 class="mb-0">LOGIN</h1>
+                    </div>
+                    <div class="card-body">
+                        <form method="POST" action="{% url 'home' %}">
+                            {% csrf_token %}
 
-                        <div class="mb-4">
-                            <input type="text" class="form-control" name="username" placeholder="Username" required>
-                        </div>
-                        <div class="mb-4">
-                            <input type="password" class="form-control" name="password" placeholder="Password" required>
-                        </div>
-                        <div class="d-flex justify-content-center mt-4">
-                            <button type="submit" class="btn btn-success px-4 py-2 fs-5">
-                                <i class='bx bx-log-in me-2'></i>LOGIN
-                            </button>
-                        </div>
-                    </form>
+                            <div class="mb-4">
+                                <input type="text" class="form-control" name="username" placeholder="User Name"
+                                    required>
+                            </div>
+                            <div class="mb-4">
+                                <input type="password" class="form-control" name="password" placeholder="Password"
+                                    required>
+                            </div>
+                            <div class="d-flex justify-content-center mt-4">
+                                <button type="submit" class="btn btn-success px-4 py-2 fs-5">
+                                    <i class='bx bx-log-in me-2'></i>LOGIN
+                                </button>
+                            </div>
+                            <div class="text-center mt-4">
+                                <span class="text-muted">Don't have an account?</span>
+                                <a href="{% url 'register' %}" class="fw-bold text-primary text-decoration-none ms-1">
+                                    SIGN UP
+                                </a>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
