@@ -29,7 +29,7 @@ body {
     top: 0;
     width: 50%;
     height: 100%;
-    /* Background image is now set inline in HTML */
+    /* Background image is set inline in HTML */
     background-size: cover;
     background-position: center;
 }
@@ -45,15 +45,13 @@ body {
 
 /* Signup Card */
 .signup-card {
-    background-color: #FFF; /* Soft Yellow/Beige */
+    background-color: #FFF;
     border-radius: 15px;
-    padding: 1rem 2rem; /* Tăng padding ngang (left/right), giảm dọc (top/bottom) */
+    padding: 2rem;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    margin: 1rem auto; /* Giảm margin dọc từ 2rem xuống 1rem, căn giữa */
-    max-width: 600px; /* Tăng chiều ngang từ 450px lên 600px */
+    margin: 2rem auto;
     width: 100%;
 }
-
 
 /* Logo */
 .logo-container {
@@ -92,21 +90,20 @@ body {
     font-size: 0.9rem;
 }
 
-/* Form Inputs */
-.input-group {
-    margin-bottom: 0.75rem;
+/* Form Fields - Updated to match the HTML structure */
+.mb-3 {
+    margin-bottom: 1rem !important;
 }
 
-.input-group label {
+.mb-3 label {
     display: block;
-    margin-bottom: 0.5rem;
     font-weight: 500;
     color: #333;
     margin-bottom: 0.25rem;
     font-size: 0.95rem;
 }
 
-.input-group input {
+.mb-3 input {
     width: 100%;
     padding: 10px 12px;
     border: 1px solid #ddd;
@@ -115,48 +112,67 @@ body {
     transition: border-color 0.3s;
 }
 
-.input-group input:focus {
+.mb-3 input:focus {
     outline: none;
     border-color: #207C50; /* Green */
+    box-shadow: 0 0 0 0.25rem rgba(32, 124, 80, 0.25);
 }
 
-.input-group input::placeholder {
+.mb-3 input::placeholder {
     color: #aaa;
+}
+
+/* Error messages */
+.errorlist {
+    list-style: none;
+    padding-left: 0;
+    color: #D9534F;
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+    margin-bottom: 0;
+}
+
+.help-text {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 0.25rem;
+}
+
+/* Alert styling */
+.alert-warning {
+    background-color: #fff3cd;
+    border-color: #ffecb5;
+    color: #664d03;
 }
 
 /* Sign Up Button */
 .signup-btn {
     width: 100%;
-    background-color: #207C50; /* Green */
-    color: white;
-    border: none;
-    padding: 12px;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 600;
+    background-color: #207C50 !important; /* Green */
+    color: white !important;
+    border: none !important;
+    padding: 12px !important;
+    border-radius: 8px !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
     cursor: pointer;
     transition: background-color 0.3s;
-    margin-top: 0.75rem;
-}
-
-.signup-btn:hover {
-    background-color: #186542; /* Darker Green */
-}
-
-/* Sign In Link */
-.signin-link {
-    text-align: center;
     margin-top: 1rem;
 }
 
-.signin-link a {
+.signup-btn:hover {
+    background-color: #186542 !important; /* Darker Green */
+}
+
+/* Sign In Link */
+.mt-3 a {
     color: #D9534F; /* Red */
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s;
 }
 
-.signin-link a:hover {
+.mt-3 a:hover {
     color: #207C50; /* Green */
 }
 
@@ -179,7 +195,14 @@ body {
     }
     
     .signup-card {
-        margin-top: 3rem;
-        margin-bottom: 3rem;
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+        padding: 1.5rem;
+    }
+    
+    /* Make sure the card is fully visible on mobile */
+    .container {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
     }
 }
