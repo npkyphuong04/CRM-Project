@@ -10,7 +10,7 @@ class User(models.Model):
     role = models.CharField(max_length=50, default='user')
     is_active = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DataTimeField(auto_now=True)
+    updated_at = models.DateTimeField(auto_now=True)
     def __str__(self):
         return self.username
     
@@ -32,26 +32,26 @@ class Campaign(models.Model):
     type = models.CharField(max_length=50)
     status = models.CharField(max_length=50)
     start_date = models.DateField()
-    end_date = models.DataField()
-    budget = models.Decimal(max_digits=10,decimal_places=2)
+    end_date = models.DateField()
+    budget = models.DecimalField(max_digits=10,decimal_places=2)
     created_at = models.DateTimeField(auto_now_add=True)
-    updated_at=models.DataTimeField(auto_now=True)
+    updated_at=models.DateTimeField(auto_now=True)
     def __str__(self):
         return self.name
     
 class ContactCampaign(models.Model):
     contact_id = models.ForeignKey(Contact, on_delete=models.CASCADE)
-    campaign_id = models.ForeignKey(Campaign, on_delete=models.CASADE)
-    created_at = models.DataTimeField()
-    updated_at = models.DataTimeField()
+    campaign_id = models.ForeignKey(Campaign, on_delete=models.CASCADE)
+    created_at = models.DateTimeField()
+    updated_at = models.DateTimeField()
     def __str__(self):
         return f"{self.contact} in {self.campaign}"
 
 class Session(models.Model):
     session_id = models.BigIntegerField(primary_key=True)
     contact_id = models.ForeignKey(Contact, on_delete=models.SET_NULL, null=True)
-    session_start = models.DataTimeField()
-    session_end = models.DataField()
+    session_start = models.DateTimeField()
+    session_end = models.DateField()
     app_version = models.CharField(max_length=50)
     device_type = models.CharField(max_length=50)
     traffic_source = models.CharField(max_length=100)
@@ -69,8 +69,8 @@ class Item(models.Model):
     
 class Event(models.Model):
     event_id = models.AutoField(primary_key=True)
-    session_id = models.ForeignKey(Session, on_delete=models.CASADE)
-    event_time = models.DataTimeField()
+    session_id = models.ForeignKey(Session, on_delete=models.CASCADE)
+    event_time = models.DateTimeField()
     event_name = models.CharField(max_length=50)
     item_id = models.ForeignKey(Item, on_delete=models.SET_NULL,null=True)
     def __str__(self):
@@ -79,14 +79,14 @@ class Event(models.Model):
 
 
 
-# class Record(models.Model):
-# 	created_at = models.DateTimeField(auto_now_add=True)
-# 	first_name = models.CharField(max_length=50)
-# 	last_name =  models.CharField(max_length=50)
-# 	email =  models.CharField(max_length=100)
-# 	phone = models.CharField(max_length=15)
-# 	address =  models.CharField(max_length=100)
-# 	city =  models.CharField(max_length=50)
+class Record(models.Model):
+	created_at = models.DateTimeField(auto_now_add=True)
+	first_name = models.CharField(max_length=50)
+	last_name =  models.CharField(max_length=50)
+	email =  models.CharField(max_length=100)
+	phone = models.CharField(max_length=15)
+	address =  models.CharField(max_length=100)
+	city =  models.CharField(max_length=50)
 
-# 	def __str__(self):
-# 		return(f"{self.first_name} {self.last_name}")
+	def __str__(self):
+		return(f"{self.first_name} {self.last_name}")
