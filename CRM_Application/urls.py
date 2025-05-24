@@ -11,4 +11,5 @@ urlpatterns = [
     path('update_record/<int:pk>', views.update_record, name='update_record'),
     path('logout/', views.logout_user, name='logout'),
 
+    path('dashboard/', views.dashboard, name='dashboard'),
 ]

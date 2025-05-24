@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'ISM_Project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'ISM_DB',
+        'NAME': 'pizzahut',
         'USER': 'root',
         'PASSWORD': '4444',
         'HOST': 'localhost',
