@@ -9,7 +9,7 @@
 </style>
 
 {% if user.is_authenticated %}
-<div class="container-fluid pt-3 mt-3">
+<div class="p-4" style="background-color: #FFFFE8; min-height: 100vh;">
     <div class="mb-2">
         <h3 class="text-center fw-bold fs-2" style="color: #DA594A;">CUSTOMERS LIST</h3>
     </div>
@@ -101,4 +101,5 @@
             </div>
         </div>
         {% endif %}
-        {% endblock %}
+    </div>
+    {% endblock %}
