@@ -2,13 +2,13 @@
     .custom-hover:hover,
     .custom-hover.active {
         color: #207C50 !important;
-        font-weight: bold;
-        font-size: large;
+        font-weight: 600;
+        font-size: 16px;
     }
 
     .nav-link {
         color: #d44c3d;
-        font-weight: 600;
+        font-weight: 400;
         text-transform: capitalize;
     }
 
@@ -19,7 +19,7 @@
 
 <nav class="navbar navbar-expand-lg sticky-top" style="background-color: #F3DEA5;">
     <div class="container-fluid">
-        <a class="navbar-brand fw-bold fs-3" href="{% url 'home' %}" style="color: #DA594A;">🍕PizzaCRM</a>
+        <a class="navbar-brand fw-bold fs-5" href="{% url 'home' %}" style="color: #DA594A;">🍕PizzaCRM</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -36,23 +36,18 @@
                         CUSTOMERS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-black custom-hover" href="{% url 'dashboard' %}"><i class='bx bx-grid-alt'></i> Dashboard</a>
+                    <a class="nav-link custom-hover" href="{% url 'dashboard' %}"><i class='bx bx-grid-alt'></i> DASHBOARD</a>
                 </li>
                 {% endif %}
             </ul>
 
             {% if user.is_authenticated %}
             <div class="dropdown">
-                <a class="d-flex text-black align-items-center text-decoration-none dropdown-toggle fs-5" href="#"
+                <a class="d-flex text-black custom-hover align-items-center text-decoration-none dropdown-toggle fs-5" href="#"
                     role="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false"
                     style="font-weight: 600;">
                     {{ request.user.first_name }} {{ request.user.last_name }}
                 </a>
-                <div style="text-align: center;">
-                    <a class="text-decoration-none" style="font-weight: 400; color: #207C50; display: inline-block;">
-                        Admin
-                    </a>
-                </div>
 
                 <ul class="dropdown-menu dropdown-menu-end text-center custom-hover" aria-labelledby="userDropdown">
                     <li>
