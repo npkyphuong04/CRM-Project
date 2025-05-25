@@ -1,13 +1,19 @@
 {% extends 'base.html' %}
 {% block content %}
+{% include 'loggedin_navbar.html' %}
 
     <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #FFFFE8;
+        }
         /* Dashboard Header */
         .dashboard-header {
-            background: #6A3E98;
-            color: white;
+            background: #207C50;
+            color: #FFFFE8;
             padding: 15px 20px;
             margin-bottom: 20px;
+            text-align: center;
         }
 
         .dashboard-header h1 {
@@ -18,17 +24,18 @@
 
         /* Stats Cards */
         .stats-card {
-            border: 1px solid #ddd;
+            border: 1px solid #F3DEA5;
             padding: 10px 15px;
             text-align: center;
             margin-bottom: 20px;
-            background: white;
+            background: #F3DEA5;
         }
 
         .stats-card h5 {
             margin: 0;
-            font-weight: normal;
+            font-weight: 600;
             font-size: 1.1rem;
+            color: #207C50;
         }
 
         .stats-card h2 {
@@ -39,19 +46,19 @@
 
         /* Filter Dropdowns */
         .filter-dropdown {
-            border: 1px solid #ddd;
-            background: white;
+            border: 1px solid #d49690;
+            background: #d49690;
             margin-bottom: 20px;
         }
 
         .filter-dropdown button {
             width: 100%;
             text-align: left;
-            background: white;
+            background: #d49690;
             color: #333;
             border: none;
             position: relative;
-            font-weight: normal;
+            font-weight: 600;
             padding: 16px 15px;
         }
 
@@ -68,14 +75,42 @@
             background: white;
             padding: 15px;
             margin-bottom: 20px;
-            height: 250px; /* Fixed height for all charts */
+            height: 300px;
+        }
+
+        canvas#sessionDurationChart{
+            height: 250px !important;
+        }
+
+        canvas#userInterestChart{
+            height: 250px !important;
+        }
+
+        canvas#sessionByStageChart{
+            height: 240px !important;
+        }
+
+        .right-chart-container {
+            border: 1px solid #ddd;
+            background: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            height: 400px;
+        }
+
+        canvas#topItemsChart {
+            height: 320px !important;
+        }
+
+         canvas#topSourcesChart {
+            height: 320px !important;
         }
 
         .chart-container h5 {
             margin-top: 0;
             margin-bottom: 10px;
             font-size: 1rem;
-            font-weight: normal;
+            font-weight: 600;
         }
 
         .dropdown-menu {
@@ -99,15 +134,12 @@
             padding-left: 15px;
         }
 
-        /* Make charts same size */
-        canvas {
-            max-height: 200px !important;
-        }
     </style>
 
+{% if user.is_authenticated %}
     <!-- Dashboard Header -->
     <div class="dashboard-header">
-        <h1>PizzaHut Insight Dashboard</h1>
+        <h1>PizzaHut Insights Dashboard</h1>
     </div>
 
     <div class="container-fluid">
@@ -124,7 +156,7 @@
             <div class="col-md-3">
                 <!-- Total Sessions -->
                 <div class="stats-card">
-                    <h5>Total Session</h5>
+                    <h5>Total Sessions</h5>
                     <h2>{{ total_sessions }}</h2>
                 </div>
             </div>
@@ -246,13 +278,13 @@
 
             <!-- Right Charts Column -->
             <div class="small-chart">
-                <div class="chart-container">
+                <div class="right-chart-container">
                     <h5>Top 10 Items</h5>
-                    <canvas id="topItemsChart" height="300"></canvas>
+                    <canvas id="topItemsChart"></canvas>
                 </div>
-                <div class="chart-container">
+                <div class="right-chart-container">
                     <h5>Top 10 Sources</h5>
-                    <canvas id="topSourcesChart" height="300"></canvas>
+                    <canvas id="topSourcesChart"></canvas>
                 </div>
             </div>
         </div>
@@ -294,9 +326,10 @@
                     legend: {
                         position: 'right',
                         labels: {
-                            boxWidth: 12,
+                            boxWidth: 18,
+                            color: 'rgba(0, 0, 0, 1)',
                             font: {
-                                size: 10
+                                size: 14
                             }
                         }
                     }
@@ -322,9 +355,10 @@
                     legend: {
                         position: 'right',
                         labels: {
-                            boxWidth: 12,
+                            boxWidth: 18,
+                            color: 'rgba(0, 0, 0, 1)',
                             font: {
-                                size: 10
+                                size: 14
                             }
                         }
                     }
@@ -341,7 +375,7 @@
                 datasets: [{
                     label: 'Sessions',
                     data: [33.21, 30.17, 17.47, 17.29, 9.42],
-                    backgroundColor: '#6A3E98',
+                    backgroundColor: '#207C50',
                     barPercentage: 0.8
                 }]
             },
@@ -359,18 +393,20 @@
                         beginAtZero: true,
                         max: 100,
                         ticks: {
+                            color: 'rgba(0, 0, 0, 1)',
                             callback: function (value) {
                                 return value + '%';
                             },
                             font: {
-                                size: 10
+                                size: 14
                             }
                         }
                     },
                     y: {
                         ticks: {
+                            color: 'rgba(0, 0, 0, 1)',
                             font: {
-                                size: 10
+                                size: 14
                             }
                         }
                     }
@@ -388,8 +424,8 @@
                 datasets: [{
                     label: 'Count',
                     data: topItemsData.values,
-                    backgroundColor: 'rgba(135, 206, 250, 0.2)',
-                    borderColor: 'rgba(135, 206, 250, 1)',
+                    backgroundColor: 'rgba(32, 124, 80, 0.2)',
+                    borderColor: 'rgba(32, 124, 80, 1)',
                     borderWidth: 2,
                     fill: true,
                     tension: 0.3
@@ -410,8 +446,9 @@
                             color: 'rgba(0, 0, 0, 0.05)'
                         },
                         ticks: {
+                            color: 'rgba(0, 0, 0, 1)',
                             font: {
-                                size: 10
+                                size: 15
                             }
                         }
                     },
@@ -420,8 +457,9 @@
                             display: false
                         },
                         ticks: {
+                            color: 'rgba(0, 0, 0, 1)',
                             font: {
-                                size: 9
+                                size: 14
                             },
                             maxRotation: 45,
                             minRotation: 45
@@ -441,8 +479,8 @@
                 datasets: [{
                     label: 'Count',
                     data: topSourcesData.values,
-                    backgroundColor: 'rgba(135, 206, 250, 0.2)',
-                    borderColor: 'rgba(135, 206, 250, 1)',
+                    backgroundColor: 'rgba(32, 124, 80, 0.2)',
+                    borderColor: 'rgba(32, 124, 80, 1)',
                     borderWidth: 2,
                     fill: true,
                     tension: 0.3
@@ -463,8 +501,9 @@
                             color: 'rgba(0, 0, 0, 0.05)'
                         },
                         ticks: {
+                            color: 'rgba(0, 0, 0, 1)',
                             font: {
-                                size: 10
+                                size: 15
                             }
                         }
                     },
@@ -473,8 +512,9 @@
                             display: false
                         },
                         ticks: {
+                            color: 'rgba(0, 0, 0, 1)',
                             font: {
-                                size: 9
+                                size: 15
                             },
                             maxRotation: 45,
                             minRotation: 45
@@ -538,5 +578,5 @@
             document.getElementById('regionForm').submit();
         });
     </script>
-
+{% endif %}
 {% endblock %}

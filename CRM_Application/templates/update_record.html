@@ -8,7 +8,9 @@
         <div class="form-container w-100" style="max-width: 600px;">
             <div class="card shadow-sm">
                 <div class="card-body p-4">
-                    <h3 class="mb-4 text-center fw-bold" style="color: #DA594A;">UPDATE CUSTOMER</h3>
+                    <h3 class="mb-4 text-center fw-bold" style="color: #DA594A;">
+                        UPDATE CUSTOMER
+                    </h3>
                     <form method="POST">
                         {% csrf_token %}
                         {{ form.as_p }}
