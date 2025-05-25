@@ -8,16 +8,20 @@
         <div class="form-container w-100" style="max-width: 600px;">
             <div class="card shadow-sm">
                 <div class="card-body p-4">
-                    <h3 class="mb-4 text-center fw-bold" style="color: #DA594A;">ADD NEW CUSTOMER</h3>
-                    <form method="POST" action="{% url 'add_record' %}">
+                    <h3 class="mb-4 text-center fw-bold" style="color: #DA594A;">UPDATE USER</h3>
+                    <form method="POST">
                         {% csrf_token %}
                         {{ form.as_p }}
-                        <div class="d-flex justify-content-end gap-2">
-                            <a href="{% url 'home' %}" class="btn btn-secondary px-4">
+
+                        <h5 class="mt-4 mb-3">Change Password (Optional)</h5>
+                        {{ password_form.as_p }}
+
+                        <div class="d-flex justify-content-end gap-2 mt-4">
+                            <a href="{% if user.is_staff %}{% url 'user_list' %}{% else %}{% url 'home' %}{% endif %}" class="btn btn-secondary px-4">
                                 <i class='bx bx-arrow-back'></i> CANCEL
                             </a>
                             <button type="submit" class="btn btn-success px-4">
-                                <i class='bx bx-plus'></i> ADD
+                                <i class='bx bx-edit-alt'></i> UPDATE
                             </button>
                         </div>
                     </form>

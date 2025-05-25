@@ -8,12 +8,9 @@ dataBase = pymysql.connect(
     host="localhost",
     user="root",
     password="4444",
-    database="ISM_DB"
+    database="pizzahut"
 )
 
 cursor = dataBase.cursor()
-
-# Create a database
-cursor.execute("CREATE DATABASE IF NOT EXISTS ISM_DB")
 
 print("Database Connected Successfully!")
