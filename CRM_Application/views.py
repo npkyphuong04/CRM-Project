@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from .forms import SignUpForm, AddRecordForm
@@ -10,6 +10,10 @@ from django.db.models import Count
 import os
 from django.conf import settings
 import pandas as pd
+from django.contrib.auth.decorators import login_required, user_passes_test
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
+from .forms import UserAdminForm, UserProfileForm, AddUserForm, UserPasswordUpdateForm
 
 
 def home(request):
@@ -199,3 +203,141 @@ def dashboard(request):
     }
 
     return render(request, 'dashboard.html', context)
+
+
+# Check if user is staff
+def is_staff(user):
+    return user.is_staff
+
+
+@login_required
+def profile(request):
+    password_form = UserPasswordUpdateForm()
+
+    if request.method == 'POST':
+        form = UserProfileForm(request.POST, instance=request.user)
+        password_form = UserPasswordUpdateForm(request.POST)
+
+        if form.is_valid() and password_form.is_valid():
+            # Save the user profile data
+            user = form.save()
+
+            # Check if password was provided and update it
+            password1 = password_form.cleaned_data.get('password1')
+            if password1:
+                user.set_password(password1)
+                user.save()
+                messages.success(request, "Your profile has been updated! Please log in with your new password.")
+                logout(request)
+                return redirect('home')
+            else:
+                messages.success(request, "Your profile has been updated!")
+                return redirect('home')
+    else:
+        form = UserProfileForm(instance=request.user)
+        password_form = UserPasswordUpdateForm()
+
+    return render(request, 'profile.html', {
+        'form': form,
+        'password_form': password_form
+    })
+
+
+@login_required
+@user_passes_test(is_staff)
+def user_list(request):
+    users = User.objects.all()
+    return render(request, 'user_list.html', {'users': users})
+
+
+@login_required
+@user_passes_test(is_staff)
+def user_detail(request, pk):
+    user_data = get_object_or_404(User, id=pk)
+    return render(request, 'user_detail.html', {'user_data': user_data})
+
+
+@login_required
+def update_user(request, pk):
+    user_to_update = get_object_or_404(User, id=pk)
+
+    # Check if user is staff or is editing their own profile
+    if not request.user.is_staff and request.user.id != user_to_update.id:
+        messages.error(request, "You don't have permission to edit this user.")
+        return redirect('home')
+
+    # Use different form based on permissions
+    if request.user.is_staff:
+        form_class = UserAdminForm
+    else:
+        form_class = UserProfileForm
+
+    password_form = UserPasswordUpdateForm()
+
+    if request.method == 'POST':
+        form = form_class(request.POST, instance=user_to_update)
+        password_form = UserPasswordUpdateForm(request.POST)
+
+        if form.is_valid() and password_form.is_valid():
+            # Save the user profile data
+            user = form.save(commit=False)
+
+            # Check if password was provided and update it
+            password1 = password_form.cleaned_data.get('password1')
+            if password1:
+                user.set_password(password1)
+
+            user.save()
+            messages.success(request, "User has been updated!")
+
+            # If the user changed their own password, they need to log in again
+            if request.user.id == user_to_update.id and password1:
+                messages.info(request, "Your password has been changed. Please log in again.")
+                logout(request)
+                return redirect('home')
+
+            # Redirect based on user type
+            if request.user.is_staff and request.user.id != user_to_update.id:
+                return redirect('user_list')
+            else:
+                return redirect('home')
+    else:
+        form = form_class(instance=user_to_update)
+        password_form = UserPasswordUpdateForm()
+
+    context = {
+        'form': form,
+        'password_form': password_form,
+        'user_data': user_to_update
+    }
+    return render(request, 'update_user.html', context)
+
+
+@login_required
+@user_passes_test(is_staff)
+def add_user(request):
+    if request.method == 'POST':
+        form = AddUserForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "User has been added!")
+            return redirect('user_list')
+    else:
+        form = AddUserForm()
+
+    return render(request, 'add_user.html', {'form': form})
+
+
+@login_required
+@user_passes_test(is_staff)
+def delete_user(request, pk):
+    user_to_delete = get_object_or_404(User, id=pk)
+
+    # Prevent staff from deleting themselves
+    if user_to_delete.id == request.user.id:
+        messages.error(request, "You cannot delete your own account!")
+        return redirect('user_list')
+
+    user_to_delete.delete()
+    messages.success(request, "User has been deleted!")
+    return redirect('user_list')

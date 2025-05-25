@@ -38,6 +38,11 @@
                 <li class="nav-item">
                     <a class="nav-link custom-hover" href="{% url 'dashboard' %}"><i class='bx bx-grid-alt'></i> DASHBOARD</a>
                 </li>
+                {% if user.is_staff %}
+                <li class="nav-item">
+                    <a class="nav-link custom-hover" href="{% url 'user_list' %}"><i class='bx bx-user'></i> USERS</a>
+                </li>
+                {% endif %}
                 {% endif %}
             </ul>
 
@@ -51,8 +56,8 @@
 
                 <ul class="dropdown-menu dropdown-menu-end text-center custom-hover" aria-labelledby="userDropdown">
                     <li>
-                        <a class="dropdown-item nav-link" href="#">
-                            <i class='bx bx-user me-2'></i>Profile
+                        <a class="dropdown-item nav-link" href="{% url 'profile' %}">
+                            <i class='bx bx-user-circle'></i>Profile
                         </a>
                     </li>
                     <li>

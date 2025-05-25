@@ -8,12 +8,12 @@
         <div class="form-container w-100" style="max-width: 600px;">
             <div class="card shadow-sm">
                 <div class="card-body p-4">
-                    <h3 class="mb-4 text-center fw-bold" style="color: #DA594A;">ADD NEW CUSTOMER</h3>
-                    <form method="POST" action="{% url 'add_record' %}">
+                    <h3 class="mb-4 text-center fw-bold" style="color: #DA594A;">ADD NEW USER</h3>
+                    <form method="POST">
                         {% csrf_token %}
                         {{ form.as_p }}
                         <div class="d-flex justify-content-end gap-2">
-                            <a href="{% url 'home' %}" class="btn btn-secondary px-4">
+                            <a href="{% url 'user_list' %}" class="btn btn-secondary px-4">
                                 <i class='bx bx-arrow-back'></i> CANCEL
                             </a>
                             <button type="submit" class="btn btn-success px-4">
