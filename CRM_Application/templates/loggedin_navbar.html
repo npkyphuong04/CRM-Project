@@ -6,6 +6,12 @@
         font-size: large;
     }
 
+    .nav-link {
+        color: #d44c3d;
+        font-weight: 600;
+        text-transform: capitalize;
+    }
+
     body {
         font-family: 'Outfit', sans-serif;
     }
@@ -13,7 +19,7 @@
 
 <nav class="navbar navbar-expand-lg sticky-top" style="background-color: #F3DEA5;">
     <div class="container-fluid">
-        <a class="navbar-brand fw-bold fs-3" href="{% url 'home' %}" style="color: #DA594A; ">🍕PizzaCRM</a>
+        <a class="navbar-brand fw-bold fs-3" href="{% url 'home' %}" style="color: #DA594A;">🍕PizzaCRM</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -22,28 +28,49 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 {% if user.is_authenticated %}
                 <li class="nav-item">
-                    <a class="nav-link text-black custom-hover" href="#"><i class='bx bx-purchase-tag'></i>
-                        Promotion</a>
+                    <a class="nav-link custom-hover" href="#"><i class='bx bx-purchase-tag'></i>
+                        PROMOTION</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-black custom-hover" href="{% url 'home' %}"><i class='bx bx-user'></i>
-                        Customers</a>
+                    <a class="nav-link custom-hover" href="{% url 'home' %}"><i class='bx bx-group'></i>
+                        CUSTOMERS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-black custom-hover" href="#"><i class='bx bx-grid-alt'></i> Dashboard</a>
+                    <a class="nav-link custom-hover" href="#"><i class='bx bx-grid-alt'></i> DASHBOARD</a>
                 </li>
                 {% endif %}
             </ul>
 
             {% if user.is_authenticated %}
-            <div class="d-flex align-items-center justify-content-center ms-auto">
-                <div class="me-3 text-end text-black fs-5">
-                    <div><strong>{{ request.user.first_name }} {{ request.user.last_name }}</strong></div>
-                </div>
-                <a href="{% url 'logout' %}" class="nav-link text-black custom-hover">
-                    <i class='bx bx-log-out'></i>Logout
+            <div class="dropdown">
+                <a class="d-flex text-black align-items-center text-decoration-none dropdown-toggle fs-5" href="#"
+                    role="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false"
+                    style="font-weight: 600;">
+                    {{ request.user.first_name }} {{ request.user.last_name }}
                 </a>
+                <div style="text-align: center;">
+                    <a class="text-decoration-none" style="font-weight: 400; color: #207C50; display: inline-block;">
+                        Admin
+                    </a>
+                </div>
+
+                <ul class="dropdown-menu dropdown-menu-end text-center custom-hover" aria-labelledby="userDropdown">
+                    <li>
+                        <a class="dropdown-item nav-link" href="#">
+                            <i class='bx bx-user me-2'></i>Profile
+                        </a>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li>
+                        <a class="dropdown-item nav-link" href="{% url 'logout' %}">
+                            <i class='bx bx-log-out me-2'></i>Logout
+                        </a>
+                    </li>
+                </ul>
             </div>
+
             {% endif %}
 
         </div>
