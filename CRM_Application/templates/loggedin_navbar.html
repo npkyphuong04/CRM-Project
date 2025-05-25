@@ -32,14 +32,22 @@
                 <li class="nav-item">
                     <a class="nav-link text-black custom-hover" href="{% url 'dashboard' %}"><i class='bx bx-grid-alt'></i> Dashboard</a>
                 </li>
+                {% if user.is_staff %}
+                <li class="nav-item">
+                    <a class="nav-link text-black custom-hover" href="{% url 'user_list' %}"><i class='bx bx-group'></i> User List</a>
+                </li>
+                {% endif %}
                 {% endif %}
             </ul>
 
             {% if user.is_authenticated %}
             <div class="d-flex align-items-center justify-content-center ms-auto">
                 <div class="me-3 text-end text-black fs-5">
-                    <div><strong>{{ request.user.first_name }} {{ request.user.last_name }}</strong></div>
+                    <div>Hello, <strong>{{ request.user.first_name }} {{ request.user.last_name }}</strong>!</div>
                 </div>
+                <a href="{% url 'profile' %}" class="nav-link text-black custom-hover me-3">
+                    <i class='bx bx-user-circle'></i>Profile
+                </a>
                 <a href="{% url 'logout' %}" class="nav-link text-black custom-hover">
                     <i class='bx bx-log-out'></i>Logout
                 </a>
