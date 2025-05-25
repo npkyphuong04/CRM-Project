@@ -51,7 +51,7 @@
                 <a class="d-flex text-black custom-hover align-items-center text-decoration-none dropdown-toggle fs-5" href="#"
                     role="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false"
                     style="font-weight: 600;">
-                    {{ request.user.first_name }} {{ request.user.last_name }}
+                    Hello, {{ request.user.first_name }} {{ request.user.last_name }}!
                 </a>
 
                 <ul class="dropdown-menu dropdown-menu-end text-center custom-hover" aria-labelledby="userDropdown">
