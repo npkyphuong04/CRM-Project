@@ -51,7 +51,7 @@ Course: Information System Management
 
 <!-- ABOUT THE PROJECT -->
 
-## 1. **Introduction** <a name="Introduction"></a> :bricks:
+## 1. **Introduction** <a name="Introduction"></a> 📋
 
 <div align="center">
 <img src="screenshots/Intro.gif" alt="">
@@ -74,7 +74,7 @@ A comprehensive Customer Relationship Management system built with Django that a
 |   7   | Nguyễn Minh Đạt       | ITDSIU22166 | ITDSIU22166@student.hcmiu.edu.vn |       [npkyphuong04](https://github.com/npkyphuong04)|   **TEAM LEADER** with Model evaluation, Hyper-parameters tuning   |        25        |
 
 
-## 3. **Features** <a name="Features"></a> 
+## 3. **Features** <a name="Features"></a> ✨
 - User authentication (login, register)
 - Customer records management (create, view, update, delete)
 - User management for administrators (create, view, update, delete)
@@ -152,7 +152,7 @@ python manage.py runserver
 
 9. Access the application at http://127.0.0.1:8000/
   
-## 6. **Project Structure** <a name="Project_Structure"></a>
+## 6. **Project Structure** <a name="Project_Structure"></a> 📂
 ```
 CRM-Project-main/
 ├── CRM_Application/   # Main application code
