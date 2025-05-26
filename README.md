@@ -61,7 +61,7 @@ Course: Information System Management
 A comprehensive Customer Relationship Management system built with Django that allows users to manage customer records, users list, administrative tasks, and interact with responsive dashboards.
 </div>
 
-## 2. **Team Members** <a name="Team Members"></a> :couplekiss_man_man:
+## 2. **Team Members** <a name="Team_Members"></a> :couplekiss_man_man:
 
 | Order |         Name          |     ID      |              Email               |                       Github account                        |                               Roles                                | Contribution (%) |                   
 | :---: |:---------------------:|:-----------:|:--------------------------------:|:----------------------------------------------------:| :----------------------------------------------------------------: |:----------------:|
@@ -152,7 +152,7 @@ python manage.py runserver
 
 9. Access the application at http://127.0.0.1:8000/
   
-## 6. **Project Structure** <a name="Project Structure"></a>
+## 6. **Project Structure** <a name="Project_Structure"></a>
 ```
 CRM-Project-main/
 ├── CRM_Application/   # Main application code
