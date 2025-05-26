@@ -13,4 +13,7 @@ dataBase = pymysql.connect(
 
 cursor = dataBase.cursor()
 
+#Create a database if it doesn't exist
+cursor.execute("CREATE DATABASE IF NOT EXISTS pizzahut")
+
 print("Database Connected Successfully!")

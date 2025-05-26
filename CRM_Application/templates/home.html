@@ -6,6 +6,36 @@
     body {
         font-family: 'Outfit', sans-serif;
     }
+
+    .table thead th {
+        background-color: #F3DEA5;
+        color: black;
+    }
+
+      .pagination .page-item .page-link {
+        color: #333c;  
+        background-color: #f8f9fa;
+        border: 1px solid #ddd;
+    }
+
+    .pagination .page-item .page-link:hover {
+        background-color: #207C50;
+        color: white;
+    }
+
+    .pagination .page-item.active .page-link {
+        background-color: #207C50;
+        color: white;
+        border-color: #207C50;
+        font-weight: 600;
+    }
+
+    .pagination .page-item.disabled .page-link {
+        color: #333;
+        pointer-events: none;
+        background-color: #f8f9fa;
+        border-color: #ddd;
+    }
 </style>
 
 {% if user.is_authenticated %}
@@ -21,7 +51,7 @@
     </div>
 
     <div class="table-responsive">
-        <table class="table table-hover align-middle text-nowrap">
+        <table id="customerTable" class="table table-hover align-middle text-nowrap">
             <thead class="table-light fs-5">
                 <tr>
                     <th>ID</th>
@@ -64,6 +94,9 @@
                 {% endif %}
             </tbody>
         </table>
+        <nav>
+            <ul class="pagination justify-content-center" id="pagination"></ul>
+        </nav>
         {% else %}
         <div
             style="background-color: #FFFFE8; min-height: 100vh; display: flex; align-items: center; justify-content: center;">
@@ -102,4 +135,83 @@
         </div>
         {% endif %}
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const table = document.getElementById("customerTable");
+            const rows = table.querySelectorAll("tbody tr");
+            const rowsPerPage = 12;
+            const pagination = document.getElementById("pagination");
+
+            let currentPage = 1;
+            const totalPages = Math.ceil(rows.length / rowsPerPage);
+
+            function showPage(page) {
+                if (page < 1) page = 1;
+                if (page > totalPages) page = totalPages;
+
+                currentPage = page;
+
+                let start = (page - 1) * rowsPerPage;
+                let end = start + rowsPerPage;
+
+                rows.forEach((row, index) => {
+                    row.style.display = index >= start && index < end ? "" : "none";
+                });
+
+                setupPagination();
+            }
+
+            function setupPagination() {
+                pagination.innerHTML = "";
+
+                // Prev button
+                const prevLi = document.createElement("li");
+                prevLi.className = `page-item ${currentPage === 1 ? "disabled" : ""}`;
+
+                const prevBtn = document.createElement("button");
+                prevBtn.className = "page-link";
+                prevBtn.innerHTML = "&laquo;";
+                prevBtn.onclick = () => {
+                    if (currentPage > 1) showPage(currentPage - 1);
+                };
+
+                prevLi.appendChild(prevBtn);
+                pagination.appendChild(prevLi);
+
+                // Page number buttons
+                for (let i = 1; i <= totalPages; i++) {
+                    const li = document.createElement("li");
+                    li.className = `page-item ${i === currentPage ? "active" : ""}`;
+
+                    const btn = document.createElement("button");
+                    btn.className = "page-link";
+                    btn.textContent = i;
+                    btn.onclick = () => showPage(i);
+
+                    li.appendChild(btn);
+                    pagination.appendChild(li);
+                }
+
+                // Next button
+                const nextLi = document.createElement("li");
+                nextLi.className = `page-item ${currentPage === totalPages ? "disabled" : ""}`;
+
+                const nextBtn = document.createElement("button");
+                nextBtn.className = "page-link";
+                nextBtn.innerHTML = "&raquo;";
+                nextBtn.onclick = () => {
+                    if (currentPage < totalPages) showPage(currentPage + 1);
+                };
+
+                nextLi.appendChild(nextBtn);
+                pagination.appendChild(nextLi);
+            }
+
+            // Initial render
+            showPage(currentPage);
+        });
+
+    </script>
+
     {% endblock %}
