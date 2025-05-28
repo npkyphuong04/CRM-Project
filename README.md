@@ -1,7 +1,7 @@
 # Customer Realtionship Management System
 Course: Information System Management
 
-![CRM Presentation.png](https://github.com/nguyensngoc108/Furnitech/blob/main/Furnitech%20Presentation.png)
+![CRM Presentation.png](https://github.com/npkyphuong04/CRM-Project/blob/main/CRM.png)
 
 <div align="center">
 
@@ -9,8 +9,6 @@ Course: Information System Management
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-
-
 </div>
 
 <div align="center">
@@ -25,13 +23,14 @@ Course: Information System Management
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/nguyensngoc108/Furnitech">
+  <a href="https://github.com/npkyphuong04/CRM-Project">
   </a>
 
 <h3 align="center">Customer Relationship Management Sytem</h3>
-
+    <a href="https://github.com/npkyphuong04" target="_blank"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>
+    <a href="https://drive.google.com/drive/u/0/folders/1OKFwzx5zvCJDjB82YcIM9so7bxlSfdWv" target="_blank"><img src="https://img.shields.io/badge/Google%20Drive-4285F4?style=for-the-badge&logo=googledrive&logoColor=white" alt="Google Drive"></a>
   <p align="center">
-   The CRM project for Information System Management course in semester 2 (2024 - 2025), International University - VNU HCMC.
+   In the fast-paced quick-service restaurant (QSR) industry, a robust CRM system is vital for fostering customer loyalty, engagement, and revenue growth. This project designs a smart CRM for Pizza Hut, tackling issues like fragmented data, lack of personalization, and inefficient workflows. By integrating online, in-store, and third-party platform data, the system offers a unified customer view, enabling targeted marketing and predictive upselling. Following SMART objectives, it leverages machine learning and cloud technologies to ensure measurable outcomes. This transformative CRM enhances customer engagement, streamlines operations, and positions Pizza Hut for sustainable growth and improved satisfaction in the digital era.
     <br />
     <br />
   </p>
@@ -58,20 +57,20 @@ Course: Information System Management
 </div>
 
 <div style="text-align:justify">
-A comprehensive Customer Relationship Management system built with Django that allows users to manage customer records, users list, administrative tasks, and interact with responsive dashboards.
+Pizza Hut, a leading quick-service restaurant, struggles with fragmented customer data, inconsistent communication, and inefficient manual processes, hindering personalized engagement and loyalty. A centralized CRM system can unify data from online, in-store, and delivery platforms, enabling real-time insights into customer behavior. This allows tailored promotions, boosts repeat purchases, and enhances satisfaction. By automating processes and improving cross-department communication, the CRM streamlines operations, reduces errors, and supports data-driven decisions, keeping Pizza Hut competitive in the fast-paced QSR industry.
 </div>
 
 ## 2. **Team Members** <a name="Team_Members"></a> :couplekiss_man_man:
 
 | Order |         Name          |     ID      |              Email               |                       Github account                        |                               Roles                                | Contribution (%) |                   
 | :---: |:---------------------:|:-----------:|:--------------------------------:|:----------------------------------------------------:| :----------------------------------------------------------------: |:----------------:|
-|   1   |   Bành Vĩnh Thuận     | ITITIU21323 | ITITIU21323@student.hcmiu.edu.vn |           [TracyHT](https://github.com/TracyHT)      |   **TEAM LEADER** with Model evaluation, Hyper-parameters tuning   |        25        |
-|   2   |    Bùi Phương Thanh   | ITITIU21311 | ITITIU21311@student.hcmiu.edu.vn | [nguyensngoc108](https://github.com/nguyensngoc108)  |   **TEAM LEADER** with Model evaluation, Hyper-parameters tuning   |        25        |
-|   3   |    Lê Đăng Khoa       | ITITIU21227 | ITITIU21227@student.hcmiu.edu.vn |       [ITITIU20215](https://github.com/ITITIU20215)  |   **TEAM LEADER** with Model evaluation, Hyper-parameters tuning   |        25        |
-|   4   | Nguyễn Phạm Kỳ Phương | ITITIU21287 | ITITIU21287@student.hcmiu.edu.vn |       [npkyphuong04](https://github.com/npkyphuong04)|   **TEAM LEADER** with Model evaluation, Hyper-parameters tuning   |        25        |
-|   5   | Võ Trần Khánh Quỳnh   | ITITIU21024 | ITITIU21024@student.hcmiu.edu.vn |       [npkyphuong04](https://github.com/npkyphuong04)|   **TEAM LEADER** with Model evaluation, Hyper-parameters tuning   |        25        |
-|   6   | Nguyễn Thụy Bảo Trâm  | ITDSIU21124 | ITDSIU21124@student.hcmiu.edu.vn |       [npkyphuong04](https://github.com/npkyphuong04)|   **TEAM LEADER** with Model evaluation, Hyper-parameters tuning   |        25        |
-|   7   | Nguyễn Minh Đạt       | ITDSIU22166 | ITDSIU22166@student.hcmiu.edu.vn |       [npkyphuong04](https://github.com/npkyphuong04)|   **TEAM LEADER** with Model evaluation, Hyper-parameters tuning   |        25        |
+|   1   |   Bành Vĩnh Thuận     | ITITIU21323 | ITITIU21323@student.hcmiu.edu.vn |           [TracyHT](https://github.com/TracyHT)      | Front-end | 14.3% |
+|   2   |    Bùi Phương Thanh   | ITITIU21311 | ITITIU21311@student.hcmiu.edu.vn | [nguyensngoc108](https://github.com/nguyensngoc108)  | Database  |14.3% |
+|   3   |    Lê Đăng Khoa       | ITITIU21227 | ITITIU21227@student.hcmiu.edu.vn |       [ITITIU20215](https://github.com/ITITIU20215)  | Back-end |14.3% |
+|   4   | Nguyễn Phạm Kỳ Phương | ITITIU21287 | ITITIU21287@student.hcmiu.edu.vn |       [npkyphuong04](https://github.com/npkyphuong04)| Back-end |14.3% |
+|   5   | Võ Trần Khánh Quỳnh   | ITITIU21024 | ITITIU21024@student.hcmiu.edu.vn |       [npkyphuong04](https://github.com/npkyphuong04)| Front-end |14.3% |
+|   6   | Nguyễn Thụy Bảo Trâm  | ITDSIU21124 | ITDSIU21124@student.hcmiu.edu.vn |       [npkyphuong04](https://github.com/npkyphuong04)| Database |14.3% |
+|   7   | Nguyễn Minh Đạt       | ITDSIU22166 | ITDSIU22166@student.hcmiu.edu.vn |       [npkyphuong04](https://github.com/npkyphuong04)| Database |14.3% |
 
 
 ## 3. **Features** <a name="Features"></a> ✨
@@ -177,28 +176,25 @@ CRM-Project-main/
 
 ## 8. Acknowledgement <a name="Acknowledgement"></a> :brain:
 <div style="text-align:justify">
-We express our sincere gratitude and appreciation to Assoc. Prof. Nguyen Van Sinh for his professional guidance. His unwavering encouragement and support were instrumental in helping our team achieve its goals.
-We also extend our thanks to MSc. Nguyen Trung Nghia, a laboratory lecturer, whose technical assistance and good humor greatly enriched our learning experience this semester.
+We express our sincere gratitude and appreciation to Assoc. Prof. Ho Long Van for his professional guidance. His unwavering encouragement and support were instrumental in helping our team achieve its goals.
 
 We would also like to express our sincere gratitude to the irreplaceable members of our group. Their technical expertise and collaborative spirit were essential to our progress. Beyond their willingness to share their knowledge and troubleshoot challenges, their good humor and positive attitudes made this project an enriching and enjoyable learning experience. We are grateful to have had the opportunity to work alongside such a talented and supportive team.
 </div>
 <br />
 
 ## 9. References <a name="References">:bookmark:
-- [Node.js tutorial](https://www.w3schools.com/nodejs/)
-- [React.js tutorial](https://www.w3schools.com/react/default.asp)
-- [MongoDB tutorial](https://www.w3schools.com/nodejs/nodejs_mongodb.asp)
-- [Express.js tutorial](https://www.w3schools.com/nodejs/nodejs_express.asp)
-- [Mongoose tutorial](https://www.w3schools.com/nodejs/nodejs_mongodb.asp)
-- [React Router tutorial](https://www.w3schools.com/react/react_router.asp)
+- [How Pizza Hut Drives Customer Loyalty Through Unique Data-Driven Journeys](https://emarsys.com/why-emarsys/success-stories/how-pizza-hut-drives-customer-loyalty-through-unique-data-driven-journeys)
+- [Pizza Hut CRM](https://www.scribd.com/document/260683034/Pizza-Hut-Crm)
+- [How Pizza Hut uses CRM to stay top of mind (and top of app orders).](https://www.linkedin.com/pulse/how-pizza-hut-uses-crm-stay-top-mind-app-orders-kjm0c/)
+- [Pizza Hut Slices Customer Base with Segmentation.](https://www.destinationcrm.com/Articles/CRM-Insights/Case-Studies/Pizza-Hut-Slices-Customer-Base-with-Segmentation-93671.aspx)
   <br />
 
 
-[contributors-shield]: https://img.shields.io/github/contributors/nguyensngoc108/Furnitech.svg?style=for-the-badge
-[contributors-url]: https://github.com/nguyensngoc108/Furnitech/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/nguyensngoc108/Furnitech.svg?style=for-the-badge
-[forks-url]: https://github.com/nguyensngoc108/Furnitech/network/members
-[stars-shield]: https://img.shields.io/github/stars/nguyensngoc108/Furnitech.svg?style=for-the-badge
-[stars-url]: https://github.com/nguyensngoc108/Furnitech/stargazers
-[issues-shield]: https://img.shields.io/github/issues/nguyensngoc108/Furnitech.svg?style=for-the-badge
-[issues-url]: https://github.com/nguyensngoc108/Furnitech/issues
+[contributors-shield]: https://img.shields.io/github/contributors/npkyphuong04/CRM-Project.svg?style=for-the-badge
+[contributors-url]: https://github.com/npkyphuong04/CRM-Project/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/npkyphuong04/CRM-Project.svg?style=for-the-badge
+[forks-url]: https://github.com/npkyphuong04/CRM-Project/network/members
+[stars-shield]: https://img.shields.io/github/stars/npkyphuong04/CRM-Project.svg?style=for-the-badge
+[stars-url]: https://github.com/npkyphuong04/CRM-Project/stargazers
+[issues-shield]: https://img.shields.io/github/issues/npkyphuong04/CRM-Project.svg?style=for-the-badge
+[issues-url]: https://github.com/npkyphuong04/CRM-Project/issues
