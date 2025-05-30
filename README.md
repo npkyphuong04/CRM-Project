@@ -169,7 +169,7 @@ CRM-Project-main/
 
 ## 8. Acknowledgement <a name="Acknowledgement"></a> :brain:
 <div style="text-align:justify">
-We express our sincere gratitude and appreciation to Assoc. Prof. Ho Long Van for his professional guidance. His unwavering encouragement and support were instrumental in helping our team achieve its goals.
+We express our sincere gratitude and appreciation to Dr. Ho Long Van for his professional guidance. His unwavering encouragement and support were instrumental in helping our team achieve its goals.
 
 We would also like to express our sincere gratitude to the irreplaceable members of our group. Their technical expertise and collaborative spirit were essential to our progress. Beyond their willingness to share their knowledge and troubleshoot challenges, their good humor and positive attitudes made this project an enriching and enjoyable learning experience. We are grateful to have had the opportunity to work alongside such a talented and supportive team.
 </div>
