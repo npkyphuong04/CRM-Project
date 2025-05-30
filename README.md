@@ -56,14 +56,14 @@ Pizza Hut, a leading quick-service restaurant, struggles with fragmented custome
 ## 2. **Team Members** <a name="Team_Members"></a> :couplekiss_man_man:
 
 | Order |         Name          |     ID      |              Email               |                       Github account                        |                               Roles                                | Contribution (%) |                   
-| :---: |:---------------------------------:|:-----------:|:--------------------------------:|:----------------------------------------------------:| :----------------------------------------------------------------: |:----------------:|
-|   1   |  Bành Vĩnh Thuận  | ITITIU21323 | ITITIU21323@student.hcmiu.edu.vn |  [Banh-Vinh-Thuan](https://github.com/Banh-Vinh-Thuan) | Front-end | 14.3% |
-|   2   |   Bùi Phương Thanh  | ITITIU21311 | ITITIU21311@student.hcmiu.edu.vn |  [phuongthanhkkk](https://github.com/phuongthanhkkk) | Database  |14.3% |
-|   3   |   Lê Đăng Khoa  | ITITIU21227 | ITITIU21227@student.hcmiu.edu.vn |  [Khoakhoa2812](https://github.com/Khoakhoa2812)  | Back-end |14.3% |
-|   4   |   Nguyễn Phạm Kỳ Phương   | ITITIU21287 | ITITIU21287@student.hcmiu.edu.vn |  [npkyphuong04](https://github.com/npkyphuong04)| Back-end |14.3% |
-|   5   |   Võ Trần Khánh Quỳnh   | ITITIU21024 | ITITIU21024@student.hcmiu.edu.vn |  [kquinn301](https://github.com/kquinn301)| Front-end |14.3% |
-|   6   |   Nguyễn Thụy Bảo Trâm   | ITDSIU21124 | ITDSIU21124@student.hcmiu.edu.vn |  [ntbtram2802](https://github.com/ntbtram2802)| Database |14.3% |
-|   7   |   Nguyễn Minh Đạt   | ITDSIU22166 | ITDSIU22166@student.hcmiu.edu.vn |  [29Schiller](https://github.com/29Schiller)| Database |14.3% |
+| :---: |:---------------------:|:-----------:|:--------------------------------:|:----------------------------------------------------:| :----------------------------------------------------------------: |:----------------:|
+|   1   |    Bành Vĩnh Thuận    | ITITIU21323 | ITITIU21323@student.hcmiu.edu.vn |  [Banh-Vinh-Thuan](https://github.com/Banh-Vinh-Thuan) | Front-end | 14.3% |
+|   2   |   Bùi Phương Thanh    | ITITIU21311 | ITITIU21311@student.hcmiu.edu.vn |  [phuongthanhkkk](https://github.com/phuongthanhkkk) | Database  |14.3% |
+|   3   |      Lê Đăng Khoa     | ITITIU21227 | ITITIU21227@student.hcmiu.edu.vn |  [Khoakhoa2812](https://github.com/Khoakhoa2812)  | Back-end |14.3% |
+|   4   | Nguyễn Phạm Kỳ Phương | ITITIU21287 | ITITIU21287@student.hcmiu.edu.vn |  [npkyphuong04](https://github.com/npkyphuong04)| Back-end |14.3% |
+|   5   |  Võ Trần Khánh Quỳnh  | ITITIU21024 | ITITIU21024@student.hcmiu.edu.vn |  [kquinn301](https://github.com/kquinn301)| Front-end |14.3% |
+|   6   | Nguyễn Thụy Bảo Trâm  | ITDSIU21124 | ITDSIU21124@student.hcmiu.edu.vn |  [ntbtram2802](https://github.com/ntbtram2802)| Database |14.3% |
+|   7   |    Nguyễn Minh Đạt    | ITDSIU22166 | ITDSIU22166@student.hcmiu.edu.vn |  [29Schiller](https://github.com/29Schiller)| Database |14.3% |
 
 
 ## 3. **Features** <a name="Features"></a> ✨
