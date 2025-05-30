@@ -157,15 +157,11 @@ CRM-Project-main/
 
 ```
 
-
-
 ## 7. Usage <a name="Usage"></a> :joystick:
 1. Register a new account or log in with existing credentials (admin login)
 2. Navigate the dashboard to view the data visualization
 3. Administrators can manage users through the admin interface
 4. Users can add, edit, delete customer records and view customer details
-
-
 
 ## 8. Acknowledgement <a name="Acknowledgement"></a> :brain:
 <div style="text-align:justify">
@@ -173,7 +169,6 @@ We express our sincere gratitude and appreciation to Dr. Ho Long Van for his pro
 
 We would also like to express our sincere gratitude to the irreplaceable members of our group. Their technical expertise and collaborative spirit were essential to our progress. Beyond their willingness to share their knowledge and troubleshoot challenges, their good humor and positive attitudes made this project an enriching and enjoyable learning experience. We are grateful to have had the opportunity to work alongside such a talented and supportive team.
 </div>
-<br />
 
 ## 9. References <a name="References">:bookmark:
 - [How Pizza Hut Drives Customer Loyalty Through Unique Data-Driven Journeys](https://emarsys.com/why-emarsys/success-stories/how-pizza-hut-drives-customer-loyalty-through-unique-data-driven-journeys)
