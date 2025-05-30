@@ -3,13 +3,6 @@ Course: Information System Management
 
 ![CRM Presentation.png](https://github.com/npkyphuong04/CRM-Project/blob/main/CRM.png)
 
-<div align="center">
-
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-</div>
 
 <div align="center">
   <img src="https://img.shields.io/badge/Python-3.12.3-blue?style=for-the-badge&logo=python&logoColor=white" alt="Python">
@@ -64,13 +57,13 @@ Pizza Hut, a leading quick-service restaurant, struggles with fragmented custome
 
 | Order |         Name          |     ID      |              Email               |                       Github account                        |                               Roles                                | Contribution (%) |                   
 | :---: |:---------------------:|:-----------:|:--------------------------------:|:----------------------------------------------------:| :----------------------------------------------------------------: |:----------------:|
-|   1   |   Bành Vĩnh Thuận     | ITITIU21323 | ITITIU21323@student.hcmiu.edu.vn |           [TracyHT](https://github.com/TracyHT)      | Front-end | 14.3% |
-|   2   |    Bùi Phương Thanh   | ITITIU21311 | ITITIU21311@student.hcmiu.edu.vn | [nguyensngoc108](https://github.com/nguyensngoc108)  | Database  |14.3% |
-|   3   |    Lê Đăng Khoa       | ITITIU21227 | ITITIU21227@student.hcmiu.edu.vn |       [ITITIU20215](https://github.com/ITITIU20215)  | Back-end |14.3% |
+|   1   |   Bành Vĩnh Thuận     | ITITIU21323 | ITITIU21323@student.hcmiu.edu.vn |  [Banh-Vinh-Thuan](https://github.com/Banh-Vinh-Thuan) | Front-end | 14.3% |
+|   2   |    Bùi Phương Thanh   | ITITIU21311 | ITITIU21311@student.hcmiu.edu.vn | [phuongthanhkkk](https://github.com/phuongthanhkkk)  | Database  |14.3% |
+|   3   |    Lê Đăng Khoa       | ITITIU21227 | ITITIU21227@student.hcmiu.edu.vn |       [Khoakhoa2812](https://github.com/Khoakhoa2812)  | Back-end |14.3% |
 |   4   | Nguyễn Phạm Kỳ Phương | ITITIU21287 | ITITIU21287@student.hcmiu.edu.vn |       [npkyphuong04](https://github.com/npkyphuong04)| Back-end |14.3% |
-|   5   | Võ Trần Khánh Quỳnh   | ITITIU21024 | ITITIU21024@student.hcmiu.edu.vn |       [npkyphuong04](https://github.com/npkyphuong04)| Front-end |14.3% |
-|   6   | Nguyễn Thụy Bảo Trâm  | ITDSIU21124 | ITDSIU21124@student.hcmiu.edu.vn |       [npkyphuong04](https://github.com/npkyphuong04)| Database |14.3% |
-|   7   | Nguyễn Minh Đạt       | ITDSIU22166 | ITDSIU22166@student.hcmiu.edu.vn |       [npkyphuong04](https://github.com/npkyphuong04)| Database |14.3% |
+|   5   | Võ Trần Khánh Quỳnh   | ITITIU21024 | ITITIU21024@student.hcmiu.edu.vn |       [kquinn301](https://github.com/kquinn301)| Front-end |14.3% |
+|   6   | Nguyễn Thụy Bảo Trâm  | ITDSIU21124 | ITDSIU21124@student.hcmiu.edu.vn |       [ntbtram2802](https://github.com/ntbtram2802)| Database |14.3% |
+|   7   | Nguyễn Minh Đạt       | ITDSIU22166 | ITDSIU22166@student.hcmiu.edu.vn |       [29Schiller](https://github.com/29Schiller)| Database |14.3% |
 
 
 ## 3. **Features** <a name="Features"></a> ✨
@@ -188,13 +181,3 @@ We would also like to express our sincere gratitude to the irreplaceable members
 - [How Pizza Hut uses CRM to stay top of mind (and top of app orders).](https://www.linkedin.com/pulse/how-pizza-hut-uses-crm-stay-top-mind-app-orders-kjm0c/)
 - [Pizza Hut Slices Customer Base with Segmentation.](https://www.destinationcrm.com/Articles/CRM-Insights/Case-Studies/Pizza-Hut-Slices-Customer-Base-with-Segmentation-93671.aspx)
   <br />
-
-
-[contributors-shield]: https://img.shields.io/github/contributors/npkyphuong04/CRM-Project.svg?style=for-the-badge
-[contributors-url]: https://github.com/npkyphuong04/CRM-Project/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/npkyphuong04/CRM-Project.svg?style=for-the-badge
-[forks-url]: https://github.com/npkyphuong04/CRM-Project/network/members
-[stars-shield]: https://img.shields.io/github/stars/npkyphuong04/CRM-Project.svg?style=for-the-badge
-[stars-url]: https://github.com/npkyphuong04/CRM-Project/stargazers
-[issues-shield]: https://img.shields.io/github/issues/npkyphuong04/CRM-Project.svg?style=for-the-badge
-[issues-url]: https://github.com/npkyphuong04/CRM-Project/issues
