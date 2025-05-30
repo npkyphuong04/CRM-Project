@@ -56,7 +56,7 @@ Pizza Hut, a leading quick-service restaurant, struggles with fragmented custome
 ## 2. **Team Members** <a name="Team_Members"></a> :couplekiss_man_man:
 
 | Order |         Name          |     ID      |              Email               |                       Github account                        |                               Roles                                | Contribution (%) |                   
-| :---: |:---------------------:|:-----------:|:--------------------------------:|:----------------------------------------------------:| :----------------------------------------------------------------: |:----------------:|
+| :---: |:---------------------------------:|:-----------:|:--------------------------------:|:----------------------------------------------------:| :----------------------------------------------------------------: |:----------------:|
 |   1   | Bành Vĩnh Thuận | ITITIU21323 | ITITIU21323@student.hcmiu.edu.vn |  [Banh-Vinh-Thuan](https://github.com/Banh-Vinh-Thuan) | Front-end | 14.3% |
 |   2   | Bùi Phương Thanh  | ITITIU21311 | ITITIU21311@student.hcmiu.edu.vn |  [phuongthanhkkk](https://github.com/phuongthanhkkk) | Database  |14.3% |
 |   3   | Lê Đăng Khoa  | ITITIU21227 | ITITIU21227@student.hcmiu.edu.vn |  [Khoakhoa2812](https://github.com/Khoakhoa2812)  | Back-end |14.3% |
