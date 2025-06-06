@@ -146,42 +146,14 @@ python manage.py runserver
   
 ## 6. **Project Structure** <a name="Project_Structure"></a> 📂
 ```
-src/
-├── Main.java
-├── controller/
-│   ├── SudokuGameController.java
-├── view/
-│   ├── WelcomeScreen.java
-│   ├── GameView.java
-│   ├── GameStartListener.java
-│   ├── GameActionListener.java
-│   ├── TimerListener.java
-│   ├── EndScreen.java
-│   ├── UIUtils.java
-│   ├── HintDialog.java
-│   ├── HintSystem.java
-├── utils/
-│   ├── GameModeType.java
-│   ├── DifficultyLevel.java
-│   ├── Point.java
-│   ├── Constants.java
-├── model/
-│   ├── Board.java
-│   ├── Puzzle.java
-│   ├── Solution.java
-├── generator/
-│   ├── PuzzleGenerator.java
-│   ├── ClassicPuzzleGenerator.java
-│   ├── IcePuzzleGenerator.java
-├── validator/
-│   ├── SudokuValidator.java
-│   ├── StandardSudokuValidator.java
-├── mode/
-│   ├── GameMode.java
-│   ├── ClassicMode.java
-│   ├── IceMode.java
-├── solver/
-│   ├── SudokuSolver.java
+CRM-Project-main/
+├── CRM_Application/   # Main application code
+├── Data/              # Data files/resources
+├── ISM_Project/       # Main Django project settings
+├── manage.py          # Django management script
+├── mydb.py            # Database setup script (if needed)
+├── virt/              # Virtual environment (optional)
+└── .idea/             # IDE configuration (optional)
 
 ```
 
